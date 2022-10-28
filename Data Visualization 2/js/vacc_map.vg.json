@@ -18,7 +18,7 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/Data%20Visualization%202/data/ne_110m.json",
+                "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/main/Data%20Visualization%202/data/ne_110m.json",
                 "format": {
                     "type": "topojson",
                     "feature": "ne_110m_admin_0_countries"
@@ -29,7 +29,7 @@
                     "lookup": "properties.NAME",
                     "from": {
                         "data": {
-                            "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/Data%20Visualization%202/data/world_vacc.csv"
+                            "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/main/Data%20Visualization%202/data/world_vacc.csv"
                         },
                         "key": "Country",
                         "fields": [
@@ -89,7 +89,7 @@
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/Data%20Visualization%202/data/ne_110m.json",
+                "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/main/Data%20Visualization%202/data/ne_110m.json",
                 "format": {
                     "type": "topojson",
                     "feature": "ne_50m_graticules_30"

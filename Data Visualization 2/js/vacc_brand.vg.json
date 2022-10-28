@@ -6,7 +6,7 @@
     "width": "container",
     "height": 250,
     "data": {
-        "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/Data%20Visualization%202/data/vacc_brand.csv"
+        "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/main/Data%20Visualization%202/data/vacc_brand.csv"
     },
     "encoding": {
         "theta": {

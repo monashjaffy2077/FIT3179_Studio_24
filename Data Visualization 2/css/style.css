@@ -3,7 +3,7 @@ body {
     padding: 32px 40px 64px 40px;
 }
 
-section {
+/* section {
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -13,7 +13,7 @@ section {
     padding: 0.1% 2% 0.01% 2%;
     width: 1000px;
     text-align: left;
-}
+} */
 
 section#title {
     background-color: #d7ecff;
@@ -45,7 +45,11 @@ div#dot_plot {
     right: 50px;
 }
 
-div#table:after {
+/* div#pie_plot{
+    width: fit-content;
+} */
+
+/* div#table:after {
     content: "";
     display: table;
     clear: both;
@@ -58,5 +62,4 @@ div#left_col {
 
 div#right_col {
     width: 450px;
-    float: right;
-}
+} */

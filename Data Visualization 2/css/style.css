@@ -46,7 +46,7 @@ div#dot_plot {
 }
 
 div#pie_plot{
-    width: 320;
+    width: 360;
 }
 
 div#table:after {
@@ -56,11 +56,11 @@ div#table:after {
 }
 
 div#left_col {
-    width: 400px;
+    width: 450px;
     float: left;
 }
 
 div#right_col {
-    width: 400px;
+    width: 450px;
     float: right;
 }

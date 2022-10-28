@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Total vaccinations by brands",
     "width": "container",
-    "height": 50,
+    "height": 150,
     "data": {
       "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/main/Data%20Visualization%202/data/vacc_brand.csv"
     },

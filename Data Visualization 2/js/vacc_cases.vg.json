@@ -1,0 +1,200 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Vaccination vs Confirmed Cases"
+    },
+    "width": "container",
+    "height": 500,
+    "params": [
+        {
+            "name": "Vaccination",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 1000000000,
+                "step": 10000,
+                "name": "Total vaccinations (range):  "
+            }
+        },
+        {
+            "name": "Cases",
+            "value": 0,
+            "bind": {
+                "input": "range",
+                "min": 0,
+                "max": 100000000,
+                "step": 100,
+                "name": "Confirmed cases (range):  "
+            }
+        },
+        {
+            "name": "Continent_selection",
+            "value": null,
+            "bind": {
+                "input": "select",
+                "options": [
+                    null,
+                    "Asia",
+                    "Europe",
+                    "Africa",
+                    "Oceania",
+                    "North America",
+                    "South America"
+                ],
+                "labels": [
+                    "Show all",
+                    "Asia",
+                    "Europe",
+                    "Africa",
+                    "Oceania",
+                    "North America",
+                    "South America"
+                ],
+                "name": "Select Continent: "
+            }
+        }
+    ],
+    "data": {
+        "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/Data%20Visualization%202/data/world_vacc.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.total_vaccinations > Vaccination"
+        },
+        {
+            "filter": "datum.confirmed_cases > Cases"
+        },
+        {
+            "filter": "datum.Continent == Continent_selection || Continent_selection == null"
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "total_vaccinations",
+            "type": "quantitative",
+            "axis": {
+                "tickCount": 6,
+                "labelFontSize": 12
+            },
+            "scale": {
+                "type": "log",
+                "domain": {
+                    "param": "total_vaccinations"
+                }
+            },
+            "title": "Total Vaccinations"
+        },
+        "y": {
+            "field": "confirmed_cases",
+            "type": "quantitative",
+            "axis": {
+                "tickCount": 6,
+                "minExtent": 10
+            },
+            "scale": {
+                "domain": {
+                    "param": "confirmed_cases"
+                }
+            },
+            "title": "Confirmed cases"
+        }
+    },
+    "layer": [
+        {
+            "params": [
+                {
+                    "name": "view",
+                    "select": "interval",
+                    "bind": "scales"
+                }
+            ],
+            "mark": {
+                "type": "circle"
+            },
+            "encoding": {
+                "color": {
+                    "field": "Continent",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": [
+                            "Asia",
+                            "Europe",
+                            "Africa",
+                            "Oceania",
+                            "North America",
+                            "South America"
+                        ],
+                        "range": [
+                            "#e41a1c",
+                            "#984ea3",
+                            "#00008B",
+                            "#808000",
+                            "#e6550d",
+                            "#008B8B"
+                        ]
+                    }
+                },
+                "size": {
+                    "field": "Population",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [
+                            1000000,
+                            10000000,
+                            50000000,
+                            100000000,
+                            500000000,
+                            1000000000
+                        ],
+                        "range": [
+                            25,
+                            75,
+                            150,
+                            200,
+                            350,
+                            500,
+                            1000
+                        ]
+                    },
+                    "legend": {
+                        "format": "~s"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Country",
+                        "type": "nominal",
+                        "title": "Country/Region:"
+                    },
+                    {
+                        "field": "total_vaccinations",
+                        "type": "quantitative",
+                        "title": "Total Vaccinations"
+                    },
+                    {
+                        "field": "confirmed_cases",
+                        "type": "quantitative",
+                        "title": "Confirmed cases"
+                    },
+                    {
+                        "field": "Population",
+                        "type": "quantitative",
+                        "title": "Population"
+                    }
+                ]
+            }
+        }
+    ],
+    "config": {
+        "title": {
+            "font": "sans-serif",
+            "fontSize": 16
+        },
+        "legend": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

@@ -1,0 +1,62 @@
+body {
+    background-color: #d7ecff;
+    padding: 32px 40px 64px 40px;
+}
+
+section {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 0.1% 2% 0.01% 2%;
+    width: 1000px;
+    text-align: left;
+}
+
+section#title {
+    background-color: #d7ecff;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.para {
+    font-family: sans-serif;
+    text-align: justify;
+    text-justify: inter-word;
+    width: 100%;
+    font-size: 18px;
+  }
+
+div#vacc_map {
+    width: 1000px;
+    padding-top: 30px;
+}
+
+div#dot_plot {
+    width: 800px;
+    left: 50px;
+    right: 50px;
+}
+
+div#table:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+div#left_col {
+    width: 450px;
+    float: left;
+}
+
+div#right_col {
+    width: 450px;
+    float: right;
+}

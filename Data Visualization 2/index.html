@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  
+  <script src="js/vg_script.js"></script>
+  <link href="css/style.css" rel="stylesheet">
+
+  <title>World's COVID Vaccinations </title>
+</head>
+
+<body>
+    <section id="title">
+        <h1>World's COVID Vaccinations</h1>
+    </section>
+    
+    <section id="intro">
+        <p class="para">To bring this pandemic to an end, a large share of the world needs to be immune to the virus. 
+            The safest way to achieve this is with a vaccine. Vaccines are a technology that humanity has often relied 
+            on in the past to bring down the death toll of infectious diseases. It has been 2 years since the first
+            pandemic, let's have a look at the progress of implementing protection against COVID and the impact of it
+            to the world. </p>
+    </section>
+
+    <section id="main_map">
+        <h2 class="sub_heading">Global Vaccination Progress</h2>
+        <div id="vacc_map"></div>
+        <p class="para">It can be seen that countries with high population require a greater number of Vaccines
+            to achieve herd immunity. China and India are great examples, following up with other Asian countries
+            and in American region. However, it is considerable that several countries have yet able to have access
+            to vaccinations during the time frame of analytics. </p>
+    </section>
+    
+    <section id="dot">
+        <h2 class="sub_heading">Vaccination vs COVID Cases</h2>
+        <p class="para">Most countries and regions have a relative fair ratio between the number of confirmed COVID
+            cases with the number of vaccinations conducted. On the one hand, Haiti stands out with and oddly high
+            number of cases recorded with minor vaccine accessed. Following up are United State and United Kingdom 
+            with considerable number of COVID cases while also joining Asian countries in the top consumption of
+            vaccinations.</p>
+            <div id="dot_plot"></div>
+    </section>
+
+    <section id="pie">
+        <h2 class="sub_heading">Vaccination Manufacturers  </h2>
+        <div id="table">
+            <div id="left_col">
+                <p class="para">It is clear that Oxford/AstraZeneca and Sinovac are Manufacturers that account for a significant
+                    number of vaccines. Moderna and Sinopharm are less common with only around 10% nominated as vaccine of
+                    choice,
+                    while the remaining brands are only consisting a minor of approximately 15% total of Global distribution.
+                </p>
+            </div>
+        
+            <div id="right_col"><div id="pie_plot"></div></div>
+        </div>
+       
+    </section>
+
+</body>

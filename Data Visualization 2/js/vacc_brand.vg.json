@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text": "Total vaccinations by brands"},
+    "title": "Total vaccinations by brands",
     "width": "container",
     "height": 50,
     "data": {

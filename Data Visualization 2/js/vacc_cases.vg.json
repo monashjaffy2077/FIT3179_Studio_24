@@ -1,8 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "Vaccination vs Confirmed Cases"
-    },
+    "title": "Vaccination vs Confirmed Cases",
     "width": "container",
     "height": 500,
     "params": [

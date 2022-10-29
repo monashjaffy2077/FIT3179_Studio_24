@@ -76,3 +76,18 @@ div#right_col {
     height: min-content;
     float: right;
 }
+
+div#vacc_img::after{
+    width: 300;
+    height: 300;
+}
+
+div#para_col{
+    padding-right: 12%;
+
+}
+
+div#footer{
+    padding-top: 20px;
+    text-align: center;
+}

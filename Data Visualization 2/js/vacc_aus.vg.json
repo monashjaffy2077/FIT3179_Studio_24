@@ -1,97 +1,131 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text" : "Australia vaccination stats", "anchor": "middle"},
+    "title": {
+        "text": "Australia vaccination stats",
+        "anchor": "middle"
+    },
     "data": {
-      "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/main/Data%20Visualization%202/data/aus_vacc.csv"
+        "url": "https://raw.githubusercontent.com/monashjaffy2077/FIT3179_Studio_24/main/Data%20Visualization%202/data/aus_vacc.csv"
     },
     "hconcat": [
-      {
-        "width": 400,
-        "height": 300,
-        "transform": [
-          {
-            "fold": [
-              "total_vaccinations",
-              "people_vaccinated",
-              "people_fully_vaccinated"
+        {
+            "width": "container",
+            "height": 300,
+            "transform": [
+                {
+                    "fold": [
+                        "total_vaccinations",
+                        "people_vaccinated",
+                        "people_fully_vaccinated"
+                    ],
+                    "as": [
+                        "key",
+                        "count"
+                    ]
+                }
             ],
-            "as": ["key", "count"]
-          }
-        ],
-        "mark": {"type": "bar", "width": {"band": 0.5}},
-        "encoding": {
-          "x": {
-            "field": "key",
-            "type": "nominal",
-            "title": null,
-            "axis": {"labelAngle": 0, "labelLimit": 100}
-          },
-          "y": {
-            "field": "count",
-            "type": "quantitative",
-            "stack": false,
-            "title": "Number of records"
-          },
-          "color": {
-            "field": "key",
-            "type": "nominal",
-            "title": "Classification",
-            "legend": {
-              "labelExpr": "datum.label == 'total_vaccinations' ? 'Total vaccinations' : datum.label == 'people_vaccinated' ? 'People vaccinated' : datum.label == 'people_fully_vaccinated' ? 'People fully vaccinated' : 'Unknown'"
+            "mark": {
+                "type": "bar",
+                "width": {
+                    "band": 0.5
+                }
+            },
+            "encoding": {
+                "x": {
+                    "field": "key",
+                    "type": "nominal",
+                    "title": null,
+                    "axis": {
+                        "labelAngle": 0,
+                        "labelLimit": 100
+                    }
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "stack": false,
+                    "title": "Number of records"
+                },
+                "color": {
+                    "field": "key",
+                    "type": "nominal",
+                    "title": "Classification",
+                    "legend": {
+                        "labelExpr": "datum.label == 'total_vaccinations' ? 'Total vaccinations' : datum.label == 'people_vaccinated' ? 'People vaccinated' : datum.label == 'people_fully_vaccinated' ? 'People fully vaccinated' : datum.label == 'total_vaccinations_per_hundred' ? 'Total vaccinations (per hundred)' : datum.label == 'people_vaccinated_per_hundred' ? 'People vaccinated (per hundred)' : datum.label == 'people_fully_vaccinated_per_hundred' ? 'People fully vaccinated (per hundred)'  : 'Unknown'"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "count",
+                        "type": "quantitative",
+                        "title": "Total",
+                        "format": ","
+                    }
+                ]
             }
-          },
-          "tooltip": [
-            {
-              "field": "count",
-              "type": "quantitative",
-              "title": "Total",
-              "format": ","
-            }
-          ]
-        }
-      },
-      {
-        "width": 400,
-        "height": 300,
-        "transform": [
-          {
-            "fold": [
-              "total_vaccinations_per_hundred",
-              "people_vaccinated_per_hundred",
-              "people_fully_vaccinated_per_hundred"
+        },
+        {
+            "width": "container",
+            "height": 300,
+            "transform": [
+                {
+                    "fold": [
+                        "total_vaccinations_per_hundred",
+                        "people_vaccinated_per_hundred",
+                        "people_fully_vaccinated_per_hundred"
+                    ],
+                    "as": [
+                        "key",
+                        "count"
+                    ]
+                }
             ],
-            "as": ["key", "count"]
-          }
-        ],
-        "mark": "area",
-        "encoding": {
-          "x": {"field": "date", "type": "temporal", "title": "Date"},
-          "y": {
-            "field": "count",
-            "type": "quantitative",
-            "stack": false,
-            "scale": {"domain": [0, 250]},
-            "title": "Number of records"
-          },
-          "color": {
-            "field": "key",
-            "type": "nominal",
-            "title": "Classification",
-            "legend": {
-              "labelExpr": "datum.label == 'total_vaccinations_per_hundred' ? 'Total vaccinations (per hundred)' : datum.label == 'people_vaccinated_per_hundred' ? 'People vaccinated (per hundred)' : datum.label == 'people_fully_vaccinated_per_hundred' ? 'People fully vaccinated (per hundred)' : 'Unknown'"
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal",
+                    "title": "Date"
+                },
+                "y": {
+                    "field": "count",
+                    "type": "quantitative",
+                    "stack": false,
+                    "scale": {
+                        "domain": [
+                            0,
+                            250
+                        ]
+                    },
+                    "title": "Number of records"
+                },
+                "color": {
+                    "field": "key",
+                    "type": "nominal",
+                    "title": "Classification",
+                    "legend": {
+                        "labelExpr": "datum.label == 'total_vaccinations_per_hundred' ? 'Total vaccinations (per hundred)' : datum.label == 'people_vaccinated_per_hundred' ? 'People vaccinated (per hundred)' : datum.label == 'people_fully_vaccinated_per_hundred' ? 'People fully vaccinated (per hundred)' : 'Unknown'"
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "date",
+                        "type": "temporal",
+                        "title": "Date"
+                    },
+                    {
+                        "field": "key",
+                        "type": "nominal",
+                        "title": "Counting"
+                    },
+                    {
+                        "field": "count",
+                        "type": "quantitative",
+                        "title": "Total",
+                        "format": ","
+                    }
+                ]
             }
-          },
-          "tooltip": [
-            {"field": "date", "type": "temporal", "title": "Date"},
-            {"field": "key", "type": "nominal", "title": "Counting"},
-            {
-              "field": "count",
-              "type": "quantitative",
-              "title": "Total",
-              "format": ","
-            }
-          ]
         }
-      }
     ]
-  }
+}

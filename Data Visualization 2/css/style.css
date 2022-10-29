@@ -21,6 +21,12 @@ section#title {
     text-align: center;
 }
 
+
+section#blank {
+    background-color: #d7ecff;
+    padding-top: 60px;
+}
+
 h1 {
     text-align: center;
     font-weight: 700;
@@ -56,7 +62,8 @@ div#table:after {
 }
 
 div#left_col {
-    width: 450px;
+    width: 400px;
+    padding-left: 4%;
     float: left;
 }
 
